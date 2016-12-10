@@ -43,13 +43,13 @@ wp init "example.com"
 #### Config
 
 ```
-wp config update site_name "My WordPress Site"
-wp config update db_host "localhost"
-wp config update db_user "root"
-wp config update db_pwd "localhost"
-wp config update db_name "myDb"
-wp config update db_tbl_prefix "wpnew_"
-wp config update tmpl_name "my-theme"
+wp config -u site_name "My WordPress Site"
+wp config -u db_host "localhost"
+wp config -u db_user "root"
+wp config -u db_pwd "localhost"
+wp config -u db_name "myDb"
+wp config -u db_tbl_prefix "wpnew_"
+wp config -u tmpl_name "my-theme"
 ```
 
 After that;
