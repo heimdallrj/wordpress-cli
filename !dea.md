@@ -33,6 +33,8 @@ In the process of configuring, it'll create the database and install latest Word
 
 ### API
 
+> Each of every command, it needs to be update `config.json` file.
+
 #### Initialization
 
 ```
@@ -58,6 +60,15 @@ After that;
 wp refresh
 ```
 
+##### v2+
+
+* Update WordPress version & database without data lost `wp update core`
+* Update Site URL in database `wp config -u [-f -d] url <current url> <new url>`
+* WordPress Deployment Client `wp deploy --`
+  * Requre to update `deploy.json` with server credentials before run the `deploy` command. `wp deploy init`
+  * `wp deploy run`
+  * `wp update -u -f url <current url> <new url>` will run before `wp deploy run`
+
 #### Pluging
 
 > [WordPress Plugins SVN Mirror](https://github.com/wp-plugins)
@@ -66,6 +77,10 @@ wp refresh
 wp add plugin <plugin name>
 wp remove plugin <plugin name>
 ```
+
+##### v2+
+
+* Update Plugin version & Database without data lost `wp update plugin <plugin name> `
 
 #### Templating
 
