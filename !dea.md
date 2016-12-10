@@ -4,9 +4,19 @@ CLI Developer tool for WordPress developers to work on wordpress custom developm
 
 ## App flow
 
-### Configuration
+### Installation
 
-Developer can create WordPress dev envirement by calling `wp init` in the directory has already created or just call `wp init <dir name>` by enterring the directory name that wanted to create.
+First of all, users need to install `wp-init` NPM module in the global scope to their computer.
+
+```
+npm install -g wp-init
+```
+
+> `wp-init` is just a temparaly name for now untill find a proper name for this.
+
+### Configuring
+
+Users can create WordPress dev envirement by calling `wp init` in the directory that already has created or call `wp init <dir name>` by enterring the directory name which wanted to create.
 
 Then, it'll ask;
 * Site name
@@ -17,7 +27,7 @@ Then, it'll ask;
 * WordPress Table Prefix
 * Primary Template name
 
-for create configuration file named as `config.json` 
+for create the configuration file named as `config.json` 
 
 In the process of configuring, it'll create the database and install latest WordPress version along with empty theme canvas accoring to the given settings in `config.json`.
 
