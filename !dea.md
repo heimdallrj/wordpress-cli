@@ -18,6 +18,9 @@ npm install -g wp-init
 
 Users can create WordPress dev envirement by calling `wp init` in the directory that already has created or call `wp init <dir name>` by enterring the directory name which wanted to create.
 
+> v0.*
+> Only `wp init <dir>`
+
 Then, it'll ask;
 * Site name
 * Database Host
@@ -89,6 +92,8 @@ wp remove plugin <plugin name>
 > [The WordPress Template Hierarchy](https://wphierarchy.com/)
 
 ```
+wp add template init "MyTheme"
+**
 wp add template page
 wp add template single
 wp add template search
