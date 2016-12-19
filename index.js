@@ -21,19 +21,23 @@ var promptSchema = {
       description: 'Enter the site name'
     },
     mysql_db_host: {
-      description: 'MYSQL Database Host'
+      description: 'MYSQL Database Host',
+      default: 'localhost'
     },
     mysql_db_user: {
-      description: 'MYSQL Database User'
+      description: 'MYSQL Database User',
+      default: 'root'
     },
     mysql_db_password: {
-      description: 'MYSQL Database Password'
+      description: 'MYSQL Database Password',
+      default: 'root'
     },
     mysql_db_name: {
       description: 'MYSQL Database Name'
     },
     mysql_db_tbl_prefix: {
-      description: 'MYSQL Database Table Prefix'
+      description: 'MYSQL Database Table Prefix',
+      default: 'wp_'
     }
   }
 };
@@ -79,7 +83,34 @@ program
             // [TODO] format config.json
           });
 
-          // [TODO] Update config.php
+          // Updating wp-config.php
+          // [TODO]
+          // ** hard-coded path.. MUST change
+          var configPhpFilePathSample = 'dir/wp-config-sample.php';
+          var configPhpFilePath = 'dir/wp-config.php';
+          fs.readFile(configPhpFilePathSample, 'utf-8', (err, data) => {
+            if (err) throw err;
+
+            // find and replace
+            var objMap = {
+              "define('DB_NAME', 'database_name_here')": "define('DB_NAME', '"+config.mysql_db_name+"')",
+              "define('DB_USER', 'username_here')": "define('DB_USER', '"+config.mysql_db_user+"')",
+              "define('DB_PASSWORD', 'password_here')": "define('DB_PASSWORD', '"+config.mysql_db_password+"')",
+              "define('DB_HOST', 'localhost')": "define('DB_HOST', '"+config.mysql_db_host+"')",
+              "$table_prefix  = 'wp_'": "$table_prefix  = '"+config.mysql_db_tbl_prefix+"'"
+            }
+
+            var regExp = /define\('DB_NAME', 'database_name_here'\)|define\('DB_USER', 'username_here'\)|define\('DB_PASSWORD', 'password_here'\)|define\('DB_HOST', 'localhost'\)|\$table_prefix  = 'wp_'/g;
+
+            var result = data.replace(regExp, function(matched, i) {
+              return objMap[matched];
+            });
+
+            fs.writeFile(configPhpFilePath, result, function(err) {
+              if (err) throw err;
+              console.log('wp-config.php created.');
+            });
+          });
         });
 
         // create MySQL Database
