@@ -4,9 +4,10 @@ var gitClone = require('nodegit-clone');
 var fs = require('fs');
 var mysql = require('mysql');
 
+// temp env. data
 var env = {
   wpRemoteSrc: {
-    url: 'git@github.com:CodeOcee/Yii-Project.git'
+    url: 'git@github.com:thinkholic/wp-init-latest.git'
   },
   config: {
     file: 'config.json'
@@ -42,6 +43,8 @@ program
   .command('init <dir>')
   .description('wp init <dir>')
   .action(function(dir) {
+    // [TODO] Here, need to handle when `dir` param not provided
+    // then, it should have get the root folder
     if (dir) {
       // prompt for user inputs
       prompt.start();
@@ -124,9 +127,10 @@ program
     }
   });
 
+// program: refersh
 program
   .command('refresh')
-  .description('')
+  .description('wp refresh')
   .action(function() {
     console.log('[wp config refresh]');
     console.log('UPDATE config.php according to config.json');
@@ -135,17 +139,17 @@ program
     console.log('INSTALL fresh copy of WordPress env.');
   });
 
+// program: plugin
 program
-  .command('add <opt> <param1> [param2] [param3]')
-  .description('')
-  .action(function(opt, param1, param2, param3) {
-    console.log('[wp add %s %s %s %s]', opt, param1, param2, param3);
+  .command('plugin <opt> <param>')
+  .description('wp plugin <opt> <param>')
+  .action(function(opt, param) {
     switch (opt) {
-      case 'plugin':
-        console.log('INSTALL `%s` plugin', param1);
+      case 'add':
+        console.log('INSTALL `%s` plugin', param);
         break;
-      case 'template':
-        console.log('CREATE a `%s` template in template directory according to the other two parameters (`%s`, `%s`)', param1, param2, param3);
+      case 'remove':
+        console.log('REMOVE `%s` plugin', param);
         break;
       default:
         console.log('Invalid command.')
@@ -153,16 +157,20 @@ program
     }
   });
 
+// program: template
 program
-  .command('remove <opt> <param>')
-  .description('')
-  .action(function(opt, param) {
-    console.log('[wp remove %s %s]', opt, param);
+  .command('template <opt> <param1> [param2] [param3]')
+  .description('wp template <opt> <param1> [param2] [param3]')
+  .action(function(opt, param1, param2, param3) {
     switch (opt) {
-      case 'plugin':
-        console.log('DELETE `%s` plugin', param);
+      case 'init':
+        console.log('INITIALIZE empty wordpress theme name as `%s`', param1);
+        console.log('CREATE theme folder and style.css in there');
         break;
-      case 'template':
+      case 'add':
+        console.log('CREATE a `%s` template in template directory according to the other two parameters (`%s`, `%s`)', param1, param2, param3);
+        break;
+      case 'remove':
         console.log('DELETE the `%s` template from template directory');
         break;
       default:
@@ -171,6 +179,7 @@ program
     }
   });
 
+// program: <anything else>
 program
   .command('*')
   .action(function(env){
@@ -178,3 +187,4 @@ program
   });
 
 program.parse(process.argv);
+
