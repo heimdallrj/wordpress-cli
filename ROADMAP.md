@@ -6,13 +6,13 @@ CLI Developer tool for WordPress developers to work on wordpress custom developm
 
 ### Installation
 
-First of all, users need to install `wp-init` NPM module in the global scope to their computer.
+First of all, users need to install `wp-cli` NPM module in the global scope to their computer.
 
 ```
-npm install -g wp-init
+npm install -g wp-cli
 ```
 
-> `wp-init` is just a temparaly name for now untill find a proper name for this.
+> `wp-cli` is just a temparaly name for now untill find a proper name for this.
 
 ### Configuring
 
@@ -28,7 +28,6 @@ Then, it'll ask;
 * Database Password
 * Database Name
 * WordPress Table Prefix
-* Primary Template name
 
 for create the configuration file named as `config.json` 
 
@@ -77,8 +76,8 @@ wp refresh
 > [WordPress Plugins SVN Mirror](https://github.com/wp-plugins)
 
 ```
-wp add plugin <plugin name>
-wp remove plugin <plugin name>
+wp plugin add <plugin name>
+wp plugin remove <plugin name>
 ```
 
 ##### v2+
@@ -92,14 +91,14 @@ wp remove plugin <plugin name>
 > [The WordPress Template Hierarchy](https://wphierarchy.com/)
 
 ```
-wp add template init "MyTheme"
+wp template init "MyTheme"
 **
-wp add template page
-wp add template single
-wp add template search
+wp template add page
+wp template add single
+wp template add search
 .
-wp add template custom home “Home Page”
-wp add template archive
-wp add template archive news
+wp template add custom home “Home Page”
+wp template add archive
+wp template add archive news
 ```
 
