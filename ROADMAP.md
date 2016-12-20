@@ -71,7 +71,7 @@ wp refresh
   * `wp deploy run`
   * `wp update -u -f url <current url> <new url>` will run before `wp deploy run`
 
-#### Pluging
+#### Plugins
 
 > [WordPress Plugins SVN Mirror](https://github.com/wp-plugins)
 
