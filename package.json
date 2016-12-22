@@ -1,5 +1,5 @@
 {
-  "name": "wp-init",
+  "name": "wordpress-cli",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thinkholic/wp-init.git"
+    "url": "git+https://github.com/thinkholic/wordpress-cli.git"
   },
   "author": "thinkholic <mailtokasun@gmail.com> (http://www.thinkholic.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/thinkholic/wp-init/issues"
+    "url": "https://github.com/thinkholic/wordpress-cli/issues"
   },
-  "homepage": "https://github.com/thinkholic/wp-init#readme",
+  "homepage": "https://github.com/thinkholic/wordpress-cli#readme",
   "dependencies": {
     "commander": "^2.9.0",
     "fs": "0.0.1-security",
