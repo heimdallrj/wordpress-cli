@@ -4,5 +4,6 @@ module.exports = {
   },
   config: {
     file: 'config.json'
-  }
+  },
+  pluginSvn: 'https://github.com/wp-plugins'
 };

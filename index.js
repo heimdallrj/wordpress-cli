@@ -43,7 +43,7 @@ program
         actions.plugin.remove(identifier);
         break;
       default:
-        console.log('Invalid command.')
+        console.log('Invalid command.');
         break;
     }
   });
@@ -64,7 +64,7 @@ program
         actions.template.remove(param1);
         break;
       default:
-        console.log('Invalid command.')
+        console.log('Invalid command.');
         break;
     }
   });
@@ -72,7 +72,7 @@ program
 // program: <anything else>
 program
   .command('*')
-  .action(function(env){
+  .action(function(env) {
     console.log('Invalid input!: "%s"', env);
   });
 
