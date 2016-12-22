@@ -12,7 +12,7 @@ Command-line Tool for WordPress developers to work on WordPress custom developme
 npm install -g wp-cli
 ```
 
-> `wp-cli` is just a temparaly name for now untill find a proper name for this.
+> `wp-cli` is just a temparaly name for now until find a proper name for this.
 
 #### Initialization
 
@@ -22,17 +22,49 @@ Users can create WordPress dev envirement by calling `wp init` in the directory 
 
 It'll prompt for;
 ```
-{
-    site_name,
-    mysql_db_host,
-    mysql_db_user,
-    mysql_db_password,
-    mysql_db_name,
-    mysql_db_tbl_prefix
-}
+var promptSchema = {
+  properties: {
+    site_name: {
+      description: 'Enter the site name'
+    },
+    mysql_db_host: {
+      description: 'MYSQL Database Host',
+      default: 'localhost'
+    },
+    mysql_db_user: {
+      description: 'MYSQL Database User',
+      default: 'root'
+    },
+    mysql_db_password: {
+      description: 'MYSQL Database Password',
+      default: 'root'
+    },
+    mysql_db_name: {
+      description: 'MYSQL Database Name'
+    },
+    mysql_db_tbl_prefix: {
+      description: 'MYSQL Database Table Prefix',
+      default: 'wp_'
+    }
+  }
+};
 ```
 
 then, create the configuration file named as `config.json`
+
+```
+{
+    ste_name: 'My Site',
+    db: {
+      mysql_db_host: 'localhost',
+      mysql_db_user: 'root',
+      mysql_db_password: 'root',
+      mysql_db_name: 'myDb',
+      mysql_db_tbl_prefix: 'wp_',
+      :
+    }
+}
+```
 
 In the process of initialization, it'll create the database and install latest WordPress version along with empty theme canvas accoring to the given settings in `config.json`.
 
@@ -55,12 +87,6 @@ wp config -u db_user "root"
 wp config -u db_pwd "localhost"
 wp config -u db_name "myDb"
 wp config -u db_tbl_prefix "wpnew_"
-```
-
-##### refresh
-
-```
-wp refresh
 ```
 
 ##### plugin
@@ -92,7 +118,7 @@ wp template add archive news
 
 ### v2.x
 
-#### config 
+##### config 
 
 Update Site URL in config files and database.
 
@@ -101,11 +127,21 @@ wp config -u url <current_url> <new_url>
 wp config -u -f url <current_url> <new_url>
 ```
 
-#### update 
+##### refresh
+
+```
+wp refresh
+```
+
+##### plugin
+
+Update plugin version & database without data lost `wp plugin update <plugin name> `
+
+##### update 
 
 Update WordPress version & database without data lost `wp update core`
 
-#### deploy
+##### deploy
 
 WordPress deployment client.
 
@@ -119,7 +155,11 @@ WordPress deployment client.
 * Then, `wp deploy up`
     - Upload files & the database into the server.
 
-##### plugin
+##### backup / restore
 
-Update plugin version & database without data lost `wp plugin update <plugin name> `
+Backup folder is `.backups` 
 
+```
+wp backup
+wp restore <identifier>
+``` 
