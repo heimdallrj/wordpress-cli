@@ -1,4 +1,4 @@
-var promptSchema = {
+module.exports = {
   properties: {
     site_name: {
       description: 'Enter the site name'
@@ -24,5 +24,3 @@ var promptSchema = {
     }
   }
 };
-
-module.exports = promptSchema;

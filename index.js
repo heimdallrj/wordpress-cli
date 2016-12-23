@@ -1,7 +1,7 @@
 var program = require('commander');
 var prompt = require('prompt');
 
-var promptSchema = require('./libs/promptSchema');
+var promptSchema = require('./libs/promptSchema/config');
 var actions = require('./libs/actions');
 
 // program: init
