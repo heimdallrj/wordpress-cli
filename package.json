@@ -13,7 +13,7 @@
     "url": "git+https://github.com/thinkholic/wordpress-cli.git"
   },
   "author": "thinkholic <mailtokasun@gmail.com> (http://www.thinkholic.com)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/thinkholic/wordpress-cli/issues"
   },
