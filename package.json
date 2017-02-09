@@ -1,0 +1,26 @@
+{
+  "name": "wordpress-cli",
+  "version": "0.2.0",
+  "description": "A command-line toolkit for WordPress Developers",
+  "bin": {
+    "wp": "./bin/index.js"
+  },
+  "dependencies": {
+    "commander": "^2.9.0",
+    "update-notifier": "^1.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "node ./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thinkholic/wordpress-cli.git"
+  },
+  "author": "thinkholic <mailtokasun@gmail.com> (http://www.thinkholic.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thinkholic/wordpress-cli/issues"
+  },
+  "homepage": "https://github.com/thinkholic/wordpress-cli#readme"
+}
