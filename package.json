@@ -19,7 +19,9 @@
     "unzip": "^0.1.11",
     "update-notifier": "^1.0.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^3.15.0"
+  },
   "scripts": {
     "dev": "node ./bin/index.js"
   },
