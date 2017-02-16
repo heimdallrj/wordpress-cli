@@ -17,8 +17,12 @@ npm install -g wordpress-cli
 
 **wp init [dir]**
 
-Create and initialize the wordpress development environment.
-You can either create a working directory and run `wp init` command in there or you just can run `wp init example.com` or `wp init "My WordPress Site"` command for that.
+This perform follwing tasks;
+* Grab the WordPress latest release and download it.
+* Create the database.
+* Create and initialize the wordpress development environment.
+
+You can either create a working directory first and run `wp init` in there or you just can run `wp init example.com` or `wp init "My WordPress Site"` for that.
 
 **wp serve**
 
