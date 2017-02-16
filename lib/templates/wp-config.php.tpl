@@ -29,7 +29,7 @@ define('DB_USER', '<%= mysqlDbUser %>');
 define('DB_PASSWORD', '<%= mysqlDbPwd %>');
 
 /** MySQL hostname */
-define('DB_HOST', '<%= mysqlDbHost %>');
+define('DB_HOST', '<%= mysqlDbHost %>:<%= mysqlDbPort %>');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
