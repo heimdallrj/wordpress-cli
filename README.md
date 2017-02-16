@@ -22,7 +22,7 @@ You can either create a working directory and run `wp init` command in there or 
 
 **wp serve**
 
-Once you created and initialized the development environment, you can start a server instance on `http://localhost:8888` with followings.
+Once you created and initialized the development environment, you can start a server instance on `http://localhost:8888` with this.
 
 ```
 cd example.com
