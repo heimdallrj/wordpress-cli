@@ -3,15 +3,9 @@
 A command-line toolkit for work on custom [WordPress](http://wordpress.org/) developments in an efficient way.
 
 > This project is still at early (pre-alpha) stage.
-> I'd love to hear from anyone who wish to contribute. Feel free to submit issues, feature requests and any sugegstion you mind. PRs are welcome! :-)
+> I'd love to hear from anyone who wish to contribute. Feel free to submit issues, feature requests and any suggestions you mind. PRs are welcome! :-)
 
 Click [here](https://github.com/thinkholic/wordpress-cli/projects/1?fullscreen=true) to see the ROADMAP
-
-## Installation
-
-```
-npm install -g wordpress-cli
-```
 
 ## Prerequisites
 
@@ -20,14 +14,20 @@ You must require to install and configure followings on your development compute
 * PHP 5.4 or higher
 * MySQL
 
+## Installation
+
+```
+npm install -g wordpress-cli
+```
+
 ## Usage Guide
 
 **wp init [dir]**
 
 This perform following tasks;
-* Grab the WordPress latest release and download it.
-* Create the database.
-* Create and initialize the wordpress development environment.
+* Fetch and download the WordPress latest release.
+* Creating the database.
+* Setup and initializing the wordpress development environment.
 
 You can either create a working directory first and run `wp init` in there or you just can run `wp init example.com` or `wp init "My WordPress Site"` for that.
 
