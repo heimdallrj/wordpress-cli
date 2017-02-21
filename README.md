@@ -37,7 +37,21 @@ You can either create a working directory first and run `wp init` in there or yo
 Update configuration information here. It'll affect on `site.json` and `wp-config.php`.
 
 ```
-wp update <key> <val>
+wp config update <key> <val>
+```
+
+Only keys allowed to update through this command;
+```
+allowUpdate: {
+  config: [
+    'mysqlDbHost',
+    'mysqlDbPort',
+    'mysqlDbUser',
+    'mysqlDbPwd',
+    'mysqlDbName',
+    'mysqlDbTblPrefix'
+  ]
+},
 ```
 
 **wp serve**
