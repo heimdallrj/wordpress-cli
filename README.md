@@ -40,7 +40,7 @@ Update configuration information here. It'll affect on `site.json` and `wp-confi
 wp config update <key> <val>
 ```
 
-Only keys allowed to update through this command;
+Only following keys that allowed to update through this command;
 ```
 allowUpdate: {
   config: [
