@@ -20,7 +20,7 @@ You must require to install and configure followings on your development worksta
 npm install -g wordpress-cli
 ```
 
-## Usage Guide
+## Usage
 
 **wp init [dir]**
 
@@ -48,8 +48,7 @@ allowUpdate: {
     'mysqlDbPort',
     'mysqlDbUser',
     'mysqlDbPwd',
-    'mysqlDbName',
-    'mysqlDbTblPrefix'
+    'mysqlDbName'
   ]
 },
 ```
