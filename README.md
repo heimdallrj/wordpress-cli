@@ -55,11 +55,17 @@ allowUpdate: {
 
 **wp serve**
 
-Once you created and initialized the development environment, you can start a server instance on `http://localhost:8888` with this.
+Once you created and initialized the development environment, you can start a server instance on `http://localhost:8888` with `wp serve` (Or `wp s`).
 
 ```
 cd example.com
 wp serve
+```
+
+You can change the port with the `--port` (Or `-p`) flag like this.
+
+```
+wp serve -p 3000
 ```
 
 **wp plugin**
@@ -72,7 +78,7 @@ wp plugin add <plunginName>@<versionNumber>
 
 **wp template**
 
-Create empty theme canvas on the theme directory. Once you run this command, it'll prompt for user inputs related to creating a theme. 
+Create empty theme canvas on the theme directory. Once you run this command, it'll prompt for user inputs related to creating a theme.
 
 ```
 wp template init
