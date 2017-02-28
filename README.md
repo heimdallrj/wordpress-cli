@@ -2,6 +2,9 @@
 
 A command-line toolkit for work on custom [WordPress](http://wordpress.org/) developments in an efficient way.
 
+> **This is project is no longer maintaining here.**<br />
+> **It has moved to [wp-artisan](https://github.com/kodeflex/wp-artisan)**
+
 > This project is still at early (pre-alpha) stage.
 > I'd love to hear from anyone who wish to contribute. Feel free to submit issues, feature requests and any suggestions you mind. PRs are welcome! :-)
 
