@@ -1,6 +1,6 @@
 {
   "name": "wordpress-cli",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "A command-line toolkit for WordPress Developers",
   "bin": {
     "wp": "./bin/index.js"
